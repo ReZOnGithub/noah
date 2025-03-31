@@ -1,26 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>It's Me Noah</title>
-  <style>
+  <title>kman</title> <style>
     body {
-      font-family: sans-serif; /* Basic font */
-      text-align: center; /* Center content */
-      padding-top: 50px; /* Add some space at the top */
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 50px;
     }
-    img {
-      max-width: 200px; /* Limit image size */
-      height: auto; /* Maintain aspect ratio */
-      border-radius: 50%; /* Make the image circular (optional) */
-      margin-top: 20px; /* Add space between text and image */
+
+    /* Container for the heading and its 'X' */
+    .heading-wrapper {
+      position: relative; /* Needed for absolute positioning of the 'X' */
+      display: inline-block; /* Make wrapper only as wide as content */
+      margin-bottom: 20px; /* Add some space below heading */
+    }
+
+    /* Original heading style (adjust as needed) */
+    h1 {
+      margin: 0; /* Remove default margins to rely on wrapper */
+      font-size: 2.5em; /* Example size */
+    }
+
+    /* Styling for the 'X' overlay for heading */
+    .heading-overlay-x {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5em; /* Adjust size relative to heading */
+      font-weight: bold;
+      color: red;
+      line-height: 1;
+      pointer-events: none;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Optional shadow */
+      z-index: 10;
+    }
+
+    /* Container for the images */
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    /* Container for the first image and its 'X' */
+    .image-wrapper {
+      position: relative;
+      display: inline-block;
+      width: 200px;
+      height: 200px;
+    }
+
+    /* Styling for the images */
+    .profile-image {
+      display: block;
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* Styling for the image 'X' overlay */
+    .image-overlay-x { /* Renamed from overlay-x to be specific */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 100px;
+      font-weight: bold;
+      color: red;
+      line-height: 1;
+      pointer-events: none;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      z-index: 10;
     }
   </style>
 </head>
 <body>
 
-  <h1>its me noah</h1>
+  <div class="heading-wrapper">
+    <h1>kman</h1>
+    <div class="heading-overlay-x">X</div>
+  </div>
 
-  <img src="https://cdn.discordapp.com/avatars/1039725511116607559/19e5c2d0be81c1256e56118ed62791f2.webp" alt="Noah's profile picture">
+  <div class="image-container">
+
+    <div class="image-wrapper">
+      <img
+        src="https://cdn.discordapp.com/avatars/1039725511116607559/19e5c2d0be81c1256e56118ed62791f2.webp"
+        alt="Original profile picture"
+        class="profile-image"
+      >
+      <div class="image-overlay-x">X</div> </div>
+
+    <div class="image-wrapper">
+      <img
+        src="https://cdn.discordapp.com/avatars/939928673572765737/540dc50ee04a88032556e5f6e2b34557.webp" /* <-- REPLACE THIS URL */
+        alt="New image"
+        class="profile-image"
+      >
+    </div>
+
+  </div>
 
 </body>
 </html>
