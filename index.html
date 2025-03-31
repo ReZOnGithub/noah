@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>kman</title> <style>
+  <title>its me noah kman</title> <style>
     body {
       font-family: sans-serif;
       text-align: center;
       padding-top: 50px;
     }
 
-    /* Container for the heading and its 'X' */
+    /* Container for the heading elements */
     .heading-wrapper {
+      display: inline-block; /* Keep centering behavior */
+      margin-bottom: 20px;
+      font-size: 2.5em; /* Base size for heading elements */
+      line-height: 1.2; /* Ensure parts align well vertically */
+    }
+
+    /* Span specifically for the text to be crossed out */
+    .crossed-out-text {
       position: relative; /* Needed for absolute positioning of the 'X' */
-      display: inline-block; /* Make wrapper only as wide as content */
-      margin-bottom: 20px; /* Add some space below heading */
+      display: inline-block; /* Treat as a block for positioning, but flow inline */
     }
 
-    /* Original heading style (adjust as needed) */
-    h1 {
-      margin: 0; /* Remove default margins to rely on wrapper */
-      font-size: 2.5em; /* Example size */
-    }
-
-    /* Styling for the 'X' overlay for heading */
+    /* Styling for the 'X' overlay for the text "noah" */
     .heading-overlay-x {
       position: absolute;
       top: 0;
@@ -31,13 +32,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 1.5em; /* Adjust size relative to heading */
+      /* Make the heading X significantly larger */
+      font-size: 1.8em; /* Adjust size relative to parent text (noah) */
       font-weight: bold;
       color: red;
-      line-height: 1;
+      line-height: 1; /* Reset line-height for X itself */
       pointer-events: none;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Optional shadow */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
       z-index: 10;
+      /* Optional: Adjust vertical position slightly if needed */
+      /* top: -5%; */
     }
 
     /* Container for the images */
@@ -67,7 +71,7 @@
     }
 
     /* Styling for the image 'X' overlay */
-    .image-overlay-x { /* Renamed from overlay-x to be specific */
+    .image-overlay-x {
       position: absolute;
       top: 0;
       left: 0;
@@ -76,7 +80,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 100px;
+      /* Make the image X significantly larger */
+      font-size: 180px; /* Increased size */
       font-weight: bold;
       color: red;
       line-height: 1;
@@ -89,8 +94,12 @@
 <body>
 
   <div class="heading-wrapper">
-    <h1>kman</h1>
-    <div class="heading-overlay-x">X</div>
+    <span>its me </span>
+    <span class="crossed-out-text">
+      noah
+      <div class="heading-overlay-x">X</div>
+    </span>
+    <span> kman</span>
   </div>
 
   <div class="image-container">
@@ -101,7 +110,8 @@
         alt="Original profile picture"
         class="profile-image"
       >
-      <div class="image-overlay-x">X</div> </div>
+      <div class="image-overlay-x">X</div>
+    </div>
 
     <div class="image-wrapper">
       <img
